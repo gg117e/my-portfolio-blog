@@ -32,3 +32,37 @@
 .listItem {
   margin: 0 0 1.25rem;
 }
+
+.postLayout {
+  display: flex;
+  gap: 2rem; /* 目次と記事本文の間のスペース */
+}
+
+.tocContainer {
+  flex: 0 0 250px; /* 目次の幅を固定 */
+  padding: 1rem;
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  height: fit-content; /* コンテンツの高さに合わせる */
+}
+
+.tocContainer h3 {
+  margin-top: 0;
+  font-size: 1.2em;
+  color: var(--text-color);
+}
+
+.tocContainer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.tocContainer li {
+  margin-bottom: 0.5rem;
+}
+
+.articleContent {
+  flex-grow: 1; /* 記事本文が残りのスペースを占める */
+}
