@@ -1,21 +1,62 @@
+:root {
+  --background-color-dark: #1a1a2e;
+  --text-color-dark: #e0e0e0;
+  --accent-color-dark: #00bcd4;
+  --accent-hover-color-dark: #00e5ff;
+  --card-bg-dark: #222;
+  --card-border-dark: #333;
+  --text-muted-dark: #888;
+
+  --background-color-light: #f0f2f5;
+  --text-color-light: #333;
+  --accent-color-light: #007bff;
+  --accent-hover-color-light: #0056b3;
+  --card-bg-light: #fff;
+  --card-border-light: #ddd;
+  --text-muted-light: #6c757d;
+}
+
+html[data-theme='dark'] {
+  --background-color: var(--background-color-dark);
+  --text-color: var(--text-color-dark);
+  --accent-color: var(--accent-color-dark);
+  --accent-hover-color: var(--accent-hover-color-dark);
+  --card-bg: var(--card-bg-dark);
+  --card-border: var(--card-border-dark);
+  --border-color: var(--card-border-dark);
+  --text-muted-color: var(--text-muted-dark);
+}
+
+html[data-theme='light'] {
+  --background-color: var(--background-color-light);
+  --text-color: var(--text-color-light);
+  --accent-color: var(--accent-color-light);
+  --accent-hover-color: var(--accent-hover-color-light);
+  --card-bg: var(--card-bg-light);
+  --card-border: var(--card-border-light);
+  --border-color: var(--card-border-light);
+  --text-muted-color: var(--text-muted-light);
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  background-color: #1a1a2e; /* Dark background */
-  color: #e0e0e0; /* Light text */
+  background-color: var(--background-color);
+  color: var(--text-color);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
-  color: #00bcd4; /* Accent color for links */
+  color: var(--accent-color);
   text-decoration: none;
   transition: color 0.3s ease; /* Smooth transition for hover */
 }
 
 a:hover {
-  color: #00e5ff; /* Lighter accent on hover */
+  color: var(--accent-hover-color);
 }
 
 * {
@@ -24,7 +65,7 @@ a:hover {
 
 /* Blog Content Styling */
 .blog-content h1, .blog-content h2, .blog-content h3, .blog-content h4, .blog-content h5, .blog-content h6 {
-  color: #00bcd4; /* Accent color for headings */
+  color: var(--accent-color); /* Accent color for headings */
   margin-top: 1.5em;
   margin-bottom: 0.8em;
 }
@@ -44,16 +85,16 @@ a:hover {
 }
 
 .blog-content code {
-  background-color: #333;
-  color: #e0e0e0;
+  background-color: var(--card-border);
+  color: var(--text-color);
   padding: 0.2em 0.4em;
   border-radius: 3px;
   font-family: 'Fira Code', 'Roboto Mono', monospace;
 }
 
 .blog-content pre {
-  background-color: #222;
-  color: #e0e0e0;
+  background-color: var(--card-bg);
+  color: var(--text-color);
   padding: 1em;
   border-radius: 5px;
   overflow-x: auto;
@@ -73,5 +114,40 @@ a:hover {
   display: block;
   margin: 1em auto;
   border-radius: 5px;
+}
+
+/* Card styling for theme */
+.card {
+  background-color: var(--card-bg) !important;
+  color: var(--text-color) !important;
+  border-color: var(--card-border) !important;
+}
+
+.card-title a {
+  color: var(--text-color) !important; /* Ensure card titles are readable */
+}
+
+.card-text small {
+  color: var(--text-muted-color) !important;
+}
+
+.btn-outline-info {
+  color: var(--accent-color) !important;
+  border-color: var(--accent-color) !important;
+}
+
+.btn-outline-info:hover {
+  background-color: var(--accent-color) !important;
+  color: var(--background-color) !important;
+}
+
+.btn-outline-light {
+  color: var(--text-color) !important;
+  border-color: var(--text-color) !important;
+}
+
+.btn-outline-light:hover {
+  background-color: var(--text-color) !important;
+  color: var(--background-color) !important;
 }
 

@@ -1,9 +1,9 @@
-import { Navbar, Nav, Container } from 'react-bootstrap'
+import { Navbar, Nav, Container, Button } from 'react-bootstrap'
 import Link from 'next/link'
 
-const MyNavbar = () => {
+const MyNavbar = ({ theme, toggleTheme }) => {
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar bg={theme === 'dark' ? 'dark' : 'light'} variant={theme} expand="lg">
       <Container>
         <Navbar.Brand as={Link} href="/">My Portfolio Blog</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -14,6 +14,9 @@ const MyNavbar = () => {
             <Nav.Link as={Link} href="/portfolio">Portfolio</Nav.Link>
             <Nav.Link as={Link} href="/about">About</Nav.Link>
           </Nav>
+          <Button variant={theme === 'dark' ? 'outline-light' : 'outline-dark'} onClick={toggleTheme}>
+            {theme === 'dark' ? 'ライトモード' : 'ダークモード'}
+          </Button>
         </Navbar.Collapse>
       </Container>
     </Navbar>
