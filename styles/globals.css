@@ -7,6 +7,9 @@
   --card-border-dark: #333;
   --text-muted-dark: #888;
 
+  --code-block-bg-dark: #282c34; /* Darker background for code blocks */
+  --code-block-text-dark: #abb2bf; /* Lighter text for code blocks */
+
   --background-color-light: #f0f2f5;
   --text-color-light: #333;
   --accent-color-light: #007bff;
@@ -14,6 +17,9 @@
   --card-bg-light: #fff;
   --card-border-light: #ddd;
   --text-muted-light: #6c757d;
+
+  --code-block-bg-light: #f6f8fa; /* Light background for code blocks */
+  --code-block-text: #24292e; /* Darker text for code blocks */
 }
 
 html[data-theme='dark'] {
@@ -25,6 +31,8 @@ html[data-theme='dark'] {
   --card-border: var(--card-border-dark);
   --border-color: var(--card-border-dark);
   --text-muted-color: var(--text-muted-dark);
+  --code-block-bg: var(--code-block-bg-dark);
+  --code-block-text: var(--code-block-text-dark);
 }
 
 html[data-theme='light'] {
@@ -36,6 +44,8 @@ html[data-theme='light'] {
   --card-border: var(--card-border-light);
   --border-color: var(--card-border-light);
   --text-muted-color: var(--text-muted-light);
+  --code-block-bg: var(--code-block-bg-light);
+  --code-block-text: var(--code-block-text-light);
 }
 
 html,
@@ -86,20 +96,21 @@ a:hover {
 
 .blog-content code {
   background-color: var(--card-border);
-  color: var(--text-color);
+  color: var(--code-block-text); /* Use code block text color */
   padding: 0.2em 0.4em;
   border-radius: 3px;
   font-family: 'Fira Code', 'Roboto Mono', monospace;
 }
 
 .blog-content pre {
-  background-color: var(--card-bg);
-  color: var(--text-color);
+  background-color: var(--code-block-bg); /* Use new code block background */
+  color: var(--code-block-text); /* Use new code block text color */
   padding: 1em;
   border-radius: 5px;
   overflow-x: auto;
   font-family: 'Fira Code', 'Roboto Mono', monospace;
   line-height: 1.5;
+  position: relative; /* For positioning the copy button */
 }
 
 .blog-content pre code {
@@ -149,5 +160,25 @@ a:hover {
 .btn-outline-light:hover {
   background-color: var(--text-color) !important;
   color: var(--background-color) !important;
+}
+
+/* Copy button for code blocks */
+.copy-code-button {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  padding: 0.2em 0.5em;
+  font-size: 0.8em;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease;
+}
+
+.blog-content pre:hover .copy-code-button {
+  opacity: 1; /* Show on hover */
 }
 
