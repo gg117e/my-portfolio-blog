@@ -223,3 +223,21 @@ a:hover {
   background-color: var(--card-bg) !important;
   color: var(--text-color) !important;
 }
+
+/* Custom styles for form-control (input) */
+.form-control {
+  background-color: var(--card-bg) !important;
+  color: var(--text-color) !important;
+  border-color: var(--card-border) !important;
+}
+
+.form-control::placeholder {
+  color: var(--text-muted-color) !important;
+}
+
+/* Custom styles for input-group-text */
+.input-group-text {
+  background-color: var(--card-bg) !important;
+  color: var(--text-color) !important;
+  border-color: var(--card-border) !important;
+}
