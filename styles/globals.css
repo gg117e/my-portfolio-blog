@@ -182,3 +182,12 @@ a:hover {
   opacity: 1; /* Show on hover */
 }
 
+/* Navbar active link and hover styles */
+.navbar-nav .nav-link.active {
+  font-weight: bold;
+  color: var(--accent-color) !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--accent-hover-color) !important;
+}
