@@ -46,6 +46,9 @@
   background-color: var(--card-bg);
   color: var(--text-color);
   height: fit-content; /* コンテンツの高さに合わせる */
+  position: sticky;
+  top: 20px;
+  align-self: flex-start;
 }
 
 .tocContainer h3 {
