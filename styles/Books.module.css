@@ -1,0 +1,54 @@
+.bookList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bookItem {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.bookInfo {
+  flex-grow: 1;
+}
+
+.bookTitle {
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.bookAuthor,
+.bookDate {
+  font-size: 0.9rem;
+  color: var(--text-muted-color);
+  margin-bottom: 0.5rem;
+}
+
+.bookDescription {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.readMore {
+  display: inline-block;
+  background-color: #0070f3;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.readMore:hover {
+  background-color: #005bb5;
+}

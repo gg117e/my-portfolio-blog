@@ -1,0 +1,18 @@
+[
+  {
+    "id": "book-react-patterns",
+    "title": "React Patterns",
+    "author": "John Doe",
+    "date": "2023-03-15",
+    "description": "Reactの設計パターンについて深く学べる一冊。コンポーネントの再利用性やパフォーマンス向上に役立つ知識が満載です。",
+    "blogPostPath": "/posts/book-review-react-patterns"
+  },
+  {
+    "id": "book-clean-code",
+    "title": "Clean Code アジャイルソフトウェア達人の技",
+    "author": "Robert C. Martin",
+    "date": "2023-05-20",
+    "description": "ソフトウェア開発におけるクリーンなコードの書き方を学ぶための必読書。可読性、保守性、テスト容易性の重要性を説いています。",
+    "blogPostPath": "/posts/book-review-clean-code"
+  }
+]
