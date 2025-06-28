@@ -13,6 +13,7 @@ const MyNavbar = ({ theme, toggleTheme }) => {
             <Nav.Link as={Link} href="/blog">Blog</Nav.Link>
             <Nav.Link as={Link} href="/portfolio">Portfolio</Nav.Link>
             <Nav.Link as={Link} href="/about">About</Nav.Link>
+            <Nav.Link as={Link} href="/books">Reading List</Nav.Link>
           </Nav>
           <Button variant={theme === 'dark' ? 'outline-light' : 'outline-dark'} onClick={toggleTheme}>
             {theme === 'dark' ? 'ライトモード' : 'ダークモード'}
