@@ -1,0 +1,30 @@
+[
+  {
+    "id": "project-1",
+    "title": "Project One",
+    "description": "A brief description of project one.",
+    "image": "/images/project1.jpg",
+    "link": "https://example.com/project1"
+  },
+  {
+    "id": "project-2",
+    "title": "Project Two",
+    "description": "A brief description of project two.",
+    "image": "/images/project2.jpg",
+    "link": "https://example.com/project2"
+  },
+  {
+    "id": "portfolio-site",
+    "title": "My Portfolio Blog Site",
+    "description": "Next.jsとReactを使って構築した、自身の学習記録と開発経験をまとめたポートフォリオサイトです。モダンなデザインとレスポンシブ対応を意識して作成しました。",
+    "image": "/images/project-portfolio.jpg",
+    "link": "#"
+  },
+  {
+    "id": "task-management-app",
+    "title": "タスク管理アプリケーション",
+    "description": "Python (Django) と React を用いて開発したタスク管理アプリケーションです。ユーザー認証、CRUD操作、進捗管理機能を実装しました。",
+    "image": "/images/project-task-app.jpg",
+    "link": "#"
+  }
+]
