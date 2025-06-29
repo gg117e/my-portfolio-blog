@@ -182,3 +182,62 @@ a:hover {
   opacity: 1; /* Show on hover */
 }
 
+/* Navbar active link and hover styles */
+.navbar-nav .nav-link.active {
+  font-weight: bold;
+  color: var(--accent-color) !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--accent-hover-color) !important;
+}
+
+/* Tag and Category styles */
+.post-tags,
+.post-categories {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.9em;
+  color: var(--text-muted-color);
+}
+
+.tag-item,
+.category-item {
+  display: inline-block;
+  background-color: var(--card-border);
+  color: var(--text-color);
+  padding: 0.3em 0.6em;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Custom styles for form-select */
+.form-select {
+  background-color: var(--card-bg) !important;
+  color: var(--text-color) !important;
+  border-color: var(--card-border) !important;
+}
+
+.form-select option {
+  background-color: var(--card-bg) !important;
+  color: var(--text-color) !important;
+}
+
+/* Custom styles for form-control (input) */
+.form-control {
+  background-color: var(--card-bg) !important;
+  color: var(--text-color) !important;
+  border-color: var(--card-border) !important;
+}
+
+.form-control::placeholder {
+  color: var(--text-muted-color) !important;
+}
+
+/* Custom styles for input-group-text */
+.input-group-text {
+  background-color: var(--card-bg) !important;
+  color: var(--text-color) !important;
+  border-color: var(--card-border) !important;
+}

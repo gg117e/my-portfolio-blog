@@ -1,4 +1,6 @@
 import { getAllPostIds, getPostData } from '../../lib/posts'
+import Head from 'next/head'
+import utilStyles from '../../styles/utils.module.css'
 import { useEffect, useRef } from 'react'
 
 export async function getStaticPaths() {
@@ -49,6 +51,8 @@ export default function Post({ postData }) {
               } catch (err) {
                 console.error('Failed to copy (Clipboard API): ', err)
                 button.textContent = 'Error!'
+              } finally {
+                document.body.removeChild(textarea)
               }
             } else if (document.execCommand) {
               // Fallback for older browsers
@@ -80,17 +84,36 @@ export default function Post({ postData }) {
         }
       })
     }
-  }, [postData]) // Re-run effect if postData changes
+  }, [postData])
 
   return (
-    <div className="py-5">
-      <h1 className="display-4 fw-bold mb-3 text-center">{postData.title}</h1>
-      <p className="text-muted text-center mb-4">{postData.date}</p>
-      <div className="card bg-dark text-white border-secondary p-4">
-        <div className="card-body">
+    <>
+      <Head>
+        <title>{postData.title}</title>
+      </Head>
+      <div className={utilStyles.postLayout}>
+        {/* 目次を表示する部分 */}
+        {postData.headings && postData.headings.length > 0 && (
+          <div className={utilStyles.tocContainer}>
+            <h3>目次</h3>
+            <ul>
+              {postData.headings.map((heading) => (
+                <li key={heading.slug} style={{ marginLeft: `${(heading.level - 1) * 1.5}rem` }}>
+                  {heading.text}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        <article className={utilStyles.articleContent}>
+          <h1 className={utilStyles.headingXl}>{postData.title}</h1>
+          <div className={utilStyles.lightText}>
+            {postData.date}
+          </div>
           <div className="blog-content" ref={contentRef} dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-        </div>
+        </article>
       </div>
-    </div>
+    </>
   )
 }
